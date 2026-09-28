@@ -2,7 +2,7 @@
 
 > Educational static analysis only. No image was built, deployed, or executed.
 
-Target: `hardened`
+Target: ` hardened `
 
 Result: **PASS**
 
