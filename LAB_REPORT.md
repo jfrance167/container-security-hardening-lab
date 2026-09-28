@@ -18,7 +18,7 @@ The intentionally insecure baseline will fail controls related to image integrit
 ## Procedure
 
 1. Created a non-deployable vulnerable fixture with a mutable image tag, root execution, an embedded placeholder token, privileged container settings, host networking, and missing isolation controls.
-2. Implemented a static policy engine with stable rule identifiers and severity levels.
+2. Implemented a static policy engine with stable rule identifiers and severity levels, including effective pod/container security-context inheritance and init-container coverage.
 3. Scanned the vulnerable fixture and generated a Markdown baseline report.
 4. Created a hardened fixture using illustrative immutable digests, non-root identity, runtime-default seccomp, least privilege, a read-only filesystem, resource limits, disabled token automount, and default-deny NetworkPolicy.
 5. Scanned the hardened fixture with the same rules and generated a second report.
@@ -44,7 +44,7 @@ The experiment supports the hypothesis for the controlled fixtures. The same det
 
 - This is static configuration analysis, not runtime isolation testing.
 - The engine supports Dockerfiles and Kubernetes JSON, not arbitrary YAML syntax or Helm templates.
-- NetworkPolicy presence does not prove that a policy permits only necessary traffic.
+- Default-deny NetworkPolicy coverage does not prove that later allow policies permit only necessary traffic.
 - Illustrative image digests are intentionally non-deployable and are checked only for immutable-reference structure.
 - Production programs should add admission control, image signing, provenance verification, vulnerability scanning, runtime monitoring, and platform-specific policy.
 
