@@ -39,3 +39,20 @@ Use `--format json` for machine-readable findings. `--fail-on-findings` returns 
 ## Safety
 
 The vulnerable fixture is deliberately insecure and exists only for static analysis. Do not build, deploy, or copy it into a real environment. Image names and digests are illustrative placeholders; they are not deployable artifacts. The analyzer evaluates regular files only and refuses symbolic links so a scanned tree cannot redirect it outside the selected target.
+
+## Repository map
+
+```text
+container-security-hardening-lab/
+|-- .github/
+|-- .gitignore
+|-- LAB_REPORT.md
+|-- README.md
+|-- SECURITY.md
+|-- container_policy.py
+|-- fixtures/
+|-- reports/
+`-- tests/
+```
+
+Follow the setup and safety boundaries above before running or deploying any code.
